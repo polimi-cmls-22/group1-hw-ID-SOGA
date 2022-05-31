@@ -15,11 +15,8 @@ SynthDef(\harpacinosound, {
         [-9, 0, -5].dbamp,  [0.8, 0.07, 0.08]], BPF.ar(PinkNoise.ar, 7000, 0.1) * EnvGen.ar(Env.perc(0.001, 0.01))) * 0.1;
 	main = (main*mix) + (twang*(1-mix));
 	main = Mix( main );
-    Out.ar(out, 3*Pan2.ar(main, 0, amp));
+    Out.ar(out, 4*Pan2.ar(main, 0, amp));
 }).add;
-
-
-//var synth = Synth(\harpacinosound, [\freq, 440]);
 
 NetAddr("127.0.0.1", 57120);
 
@@ -36,3 +33,14 @@ OSCdef('OSCreceiver',
 	"/stringPlucked");
 )
 
+
+
+
+
+/*
+OPTIONAL: SELECT A DIFFERENT OUTPUT (Asio doesn't glitch for me)
+*/
+ServerOptions.outDevices; // list output devices
+Server.default.options.outDevice_("ASIO : ASIO4ALL v2");
+Server.default.reboot;
+Synth(\harpacinosound, [\freq, 440]); // test
