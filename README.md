@@ -7,7 +7,7 @@ Harpacino can be played either with the Arduino instrument or with the computer 
 <br><br>
 <b>Guide:
 <ul>
-  <li>0. connect the Arduino to your computer (optional)/li>
+  <li>0. connect the Arduino to your computer (optional)</li>
   <li>1. run the block of code in harpacino.scd</li>
   <li>2. run harpacino.pde</li>
   <li>3. play :)</li>
