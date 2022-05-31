@@ -4,6 +4,7 @@ import netP5.*;
 import processing.serial.*;
 
 Serial serialPort;
+boolean serialConnected = false;
 
 PImage harpImage;
 PImage backImage;
@@ -22,8 +23,11 @@ void setup() {
   oscP5 = new OscP5(this, 12000);
   myRemoteLocation = new NetAddress("127.0.0.1", 57120);
   
-  String portName = Serial.list()[0]; // THE SKETCH ONLY RUNS IF AN ARDUINO IS CONNECTED
-  serialPort = new Serial(this, portName, 9600);
+  if(Serial.list().length>0){
+    serialConnected = true;
+    String portName = Serial.list()[0]; 
+    serialPort = new Serial(this, portName, 9600);
+  }
   
   int harpWidth = 380;
   int harpHeight = 570;
@@ -141,8 +145,7 @@ void draw()
   background(backImage);
   image(harpImage, (width - harpImage.width)/2 + 210, 0);
   
-  //TODO:
-  if(serialPort.available()>0)
+  if(serialConnected && serialPort.available()>0)
   {
     int stringIndex = int(str(serialPort.readChar())); // read index of string that's being played
     stringPlucked(stringIndex);
