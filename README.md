@@ -14,3 +14,4 @@ Harpacino can be played either with the Arduino instrument or with the computer 
 </ul>
 </b>
 </p><br>
+You can find the Arduino code in harpac/harpac.ino
