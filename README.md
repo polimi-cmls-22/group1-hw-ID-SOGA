@@ -2,6 +2,7 @@
 <h1><i>Harpacino</i></h1>
 <i>Scarface meets The Lord Of The Rings: a laser harp is born.</i>
 <br><br>
+<a href="https://www.youtube.com/watch?v=JMN99Fptc4g">DEMO VIDEO</a><br><br>
 <img src="https://user-images.githubusercontent.com/56019313/171048625-239048dc-6e87-4460-bbc1-604f41ca583a.jpg">
 Harpacino can be played either with the Arduino instrument or with the computer keyboard. If you want to play without the Arduino you can use the F,G,H,J,K,L keys to pluck the strings (but make sure to select the Processing window for that!).
 <br><br>
@@ -14,4 +15,4 @@ Harpacino can be played either with the Arduino instrument or with the computer 
 </ul>
 </b>
 </p><br>
-You can find the Arduino code in harpac/harpac.ino
+You can find the Arduino code in harpac/harpac.ino and more details about the project in <b>"HW3 Report.pdf"</b>.
